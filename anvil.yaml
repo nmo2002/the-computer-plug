@@ -1,9 +1,11 @@
 allow_embedding: false
-package_name: Material_Design_1
-name: Material Design 1
-startup_form: Form1
+package_name: Nacim_s_Car_Dealership
+startup: {type: form, module: Base}
+name: Nacim's Car Dealership
+startup_form: null
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
+metadata: {title: Nacim's Car Dealership}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
