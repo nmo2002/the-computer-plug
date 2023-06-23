@@ -24,6 +24,10 @@ class Base(BaseTemplate):
       self.sign_in.text = email
     else:
       self.sign_in.text = "Sign In"
+    self.toggle_my_orders_link()
+
+  def toggle_my_orders_link(self):
+    self.my_orders.visible = anvil.users.get_user() != None
   
   def go_to_home(self):
     self.content_panel.clear()
