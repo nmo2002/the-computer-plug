@@ -5,7 +5,7 @@ name: Nacim's Car Dealership
 startup_form: null
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: Nacim's Car Dealership}
+metadata: {title: Nacim's Car Dealership, logo_img: 'asset:Ncd.png'}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
