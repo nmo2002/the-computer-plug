@@ -1,12 +1,32 @@
-allow_embedding: false
-package_name: Nacim_s_Car_Dealership
-startup: {type: form, module: Base}
-name: Nacim's Car Dealership
-startup_form: null
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
-metadata: {title: Nacim's Car Dealership, logo_img: 'asset:Ncd.png'}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: true, use_google: true, require_secure_passwords: true, allow_remember_me: true,
+    remember_me_days: 365}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Base}
+package_name: Nacim_s_Car_Dealership
+allow_embedding: false
+name: Nacim's Car Dealership
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: Nacim's Car Dealership, logo_img: 'asset:Ncd.png'}
+startup_form: null
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    title: Users
