@@ -25,10 +25,13 @@ class Base(BaseTemplate):
     else:
       self.sign_in.text = "Sign In"
   
-  def title_click(self, **event_args):
-    """This method is called when the link is clicked"""
+  def go_to_home(self):
     self.content_panel.clear()
     self.content_panel.add_component(Home())
+    
+  def title_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.go_to_home()
 
   def my_orders_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -37,7 +40,14 @@ class Base(BaseTemplate):
 
   def sign_in_click(self, **event_args):
     """This method is called when the link is clicked"""
-    anvil.users.login_with_form()
+    user = anvil.users.get_user()
+    if user:
+      logout = confirm("Confirm logout?")
+      if logout:
+        anvil.users.logout()
+        self.go_to_home()
+    else:
+      anvil.users.login_with_form()
     self.change_sign_in_text()
 
 
