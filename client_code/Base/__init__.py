@@ -13,9 +13,18 @@ class Base(BaseTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.change_sign_in_text()
     self.content_panel.add_component(Home())
     # Any code you write here will run before the form opens.
 
+  def change_sign_in_text(self):
+    user = anvil.users.get_user()
+    if user:
+      email = user['email']
+      self.sign_in.text = email
+    else:
+      self.sign_in.text = "Sign In"
+  
   def title_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
@@ -29,6 +38,7 @@ class Base(BaseTemplate):
   def sign_in_click(self, **event_args):
     """This method is called when the link is clicked"""
     anvil.users.login_with_form()
+    self.change_sign_in_text()
 
 
 
