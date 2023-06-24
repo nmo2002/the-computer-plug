@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
-from ..Cars import Cars
+from ..Computers import Computers
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
