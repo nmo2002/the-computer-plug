@@ -18,7 +18,7 @@ class Parts(PartsTemplate):
     
 
   def load_parts(self):
-    parts = anvil.server.call('get_part_details').search()
+    parts = anvil.server.call('get_all_parts').search()
     course_panel = GridPanel()
     
     for i, part in enumerate(parts):
