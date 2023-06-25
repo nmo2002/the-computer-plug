@@ -13,7 +13,9 @@ import anvil.server
 # them with @anvil.server.callable.
 # Here is an example - you can replace it with your own:
 #
-def get_part_details():
+
+@anvil.server.callable
+def get_part_details(part_name):
   return app_tables.parts.get(id_name=part_name)
 
 @anvil.server.callable
