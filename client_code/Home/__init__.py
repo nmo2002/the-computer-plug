@@ -16,7 +16,7 @@ class Home(HomeTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def view_orders_click(self, **event_args):
+  def view_parts_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(Parts())

@@ -19,7 +19,7 @@ components:
       italic: false, background: '', bold: false, underline: false, icon: 'fa:book'}
     name: my_parts
     layout_properties: {}
-    event_bindings: {click: my_orders_click}
+    event_bindings: {click: my_parts_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Sign In, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,

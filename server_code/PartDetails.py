@@ -15,4 +15,4 @@ import anvil.server
 #
 @anvil.server.callable
 def get_part_details():
-  return app_tables.courses.client_readable()
+  return app_tables.parts.client_readable()
