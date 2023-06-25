@@ -11,12 +11,12 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: Base}
-package_name: Nacim_s_Car_Dealership
+package_name: The_Computer_Plug
 allow_embedding: false
-name: Nacim's Car Dealership
+name: The Computer Plug
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: Nacim's Car Dealership, logo_img: 'asset:Ncd.png'}
+metadata: {title: The Computer Plug, logo_img: 'asset:Ncd.png'}
 startup_form: null
 db_schema:
   users:
