@@ -39,12 +39,12 @@ class Checkout(CheckoutTemplate):
     if user['purchased_parts'] and self.part['name'] in user['purchase_parts']:
       alert("You already own this part!")
     try:
-      token, info = stripe.checkout.get_token(amount=self.part['price'], currency="USD", title=self.part['name'], description=self.part['description'])
-      anvil.server.call('charge_user', token, user['email'], self.course['name'])
+      token, info = stripe.checkout.get_token(amount=self.part['price'] * 100, currency="USD", title=self.part['name'], description=self.part['description'])
+      anvil.server.call('charge_user', token, user['email'], self.part['id_name'])
       alert('Success')
-    except:
-      alert('Something went wrong!')
-    
+    except Exception as e:
+      alert(str(e))
+
       
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""

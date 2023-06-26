@@ -19,7 +19,7 @@ allow_embedding: false
 name: The Computer Plug
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: The Computer Plug, logo_img: 'asset:Ncd.png'}
+metadata: {title: The Computer Plug, logo_img: 'asset:The computer plug.png'}
 startup_form: null
 db_schema:
   users:

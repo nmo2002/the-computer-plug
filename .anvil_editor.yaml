@@ -9,6 +9,9 @@ unique_ids:
   modules: {}
   server_modules:
     PartDetails: '1687647800509456599900918.2877'
+    Part_Unlock: '1687819284470715047328601.4733'
+    Purchase: '1687815234849979112747693.1016'
   assets:
+    The computer plug.png: '1687816874960822478062082.9691'
     standard-page.html: EWZ273JXYYA7OWGO73H6CTZ2EBQXNNCC
     theme.css: LKQ4TSZKEO5NKVYVPWJ57X72M7PC3ZQN
