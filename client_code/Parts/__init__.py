@@ -1,5 +1,6 @@
 from ._anvil_designer import PartsTemplate
 from anvil import *
+import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -27,10 +28,10 @@ class Parts(PartsTemplate):
     
   def load_parts(self):
     parts = anvil.server.call('get_all_parts').search()
-    course_panel = GridPanel()
+    part_panel = GridPanel()
     
     for i, part in enumerate(parts):
       p = PartItem(name=part['name'], button_text = f'Buy for ${part["price"]}', description=part['description'], image=part['image'], button_callback=self.render_checkout)
-      course_panel.add_component(p, row=str(i//2), width_xs=6)
+      part_panel.add_component(p, row=str(i//2), width_xs=6)
     # Any code you write here will run before the form opens.
-    self.content_panel.add_component(course_panel)
+    self.content_panel.add_component(part_panel)
