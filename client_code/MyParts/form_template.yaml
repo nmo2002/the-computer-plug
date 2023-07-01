@@ -6,5 +6,12 @@ components:
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {grid_position: 'EVEXWE,UUOFBE'}
-  components: []
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'You do not own any parts :(', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: no_parts_label
+    layout_properties: {grid_position: 'KTJCCH,NOCJOU'}
 is_package: true

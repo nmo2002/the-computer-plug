@@ -22,6 +22,9 @@ class MyParts(MyPartsTemplate):
   def load_parts(self):
     parts = anvil.server.call('get_my_parts')
     part_panel = GridPanel()
+
+    if len(parts) > 0:
+      self.no_parts_label.visible = False
       
     for i, part in enumerate(parts):
       p = PartItem(name=part['name'], button_text = 'View Content', description=part['description'], image=part['image'], button_callback=self.render_part)
